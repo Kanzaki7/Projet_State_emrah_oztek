@@ -1,0 +1,11 @@
+.divPersonal {
+    color: black;
+    width: 80%;
+    height: 100%;
+}
+
+.divInput {
+    display: flex;
+    flex-direction: column;
+
+}
