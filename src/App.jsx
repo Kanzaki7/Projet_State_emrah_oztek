@@ -1,9 +1,22 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import Personal from './components/Personal/Personal'
 
 function App() {
   // const [count, setCount] = useState(0)
+  const [nom, setNom] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+
+  let captureNom = (event) => {
+    setNom(event.target.value);
+  }
+  let captureEmail = (event) => {
+    setEmail(event.target.value);
+  }
+  let capturePhone = (event) => {
+    setPhone(event.target.value);
+  }
 
   return (
     <>
@@ -51,7 +64,7 @@ function App() {
           </div>
         </div>
         <div className='secondeDiv'>
-          <Personal />
+          <Personal nom={nom} email={email} phone={phone} changeNom={captureNom} changeEmail={captureEmail} changePhone={capturePhone}/>
         </div>
       </div>
     </>
