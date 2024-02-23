@@ -6,7 +6,13 @@ function App() {
 
   return (
     <>
-      
+      <div className='divPrincipale'>
+        <div className='divStep'>
+          <div className='sideBar'>
+
+          </div>
+        </div>
+      </div>
     </>
   )
 }
