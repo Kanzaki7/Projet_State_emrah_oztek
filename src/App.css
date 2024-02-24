@@ -86,6 +86,19 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: .5s all ease-in-out;
+}
+.divStepNumberActive {
+  width: 35px;
+  height: 35px;
+  color: hsl(213, 96%, 18%);
+  background-color: hsl(228, 100%, 84%);
+  border: 1px solid hsl(243, 100%, 62%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .5s all ease-in-out;
 }
 
 .number {
@@ -111,4 +124,37 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+.btnNext {
+  width: 130px;
+  height: 55px;
+  color: white;
+  font-family: UbuntuBold;
+  background-color: hsl(213, 96%, 18%);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btnNext:hover {
+  background-color: hsl(243, 100%, 62%);
+}
+
+.btnBack {
+  width: 130px;
+  height: 55px;
+  color: hsl(213, 96%, 18%);
+  font-family: UbuntuBold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btnBack:hover {
+  color: hsl(243, 100%, 62%);
 }

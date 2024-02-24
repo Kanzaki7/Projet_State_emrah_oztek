@@ -78,7 +78,7 @@ label {
     height: 50px;
     border-radius: 8px;
     background-color: white;
-    /* outline: none; */
+    outline-color: purple;
     border: none;
     border: 2px solid hsl(229, 24%, 87%);
     color: black;

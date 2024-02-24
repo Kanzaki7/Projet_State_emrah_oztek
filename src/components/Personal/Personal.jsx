@@ -22,7 +22,7 @@ export default function Personal(props) {
                 </div>
             </div>
             <div className='personalBtn'>
-                <div className='btnNext'>Next Step</div>
+                {(props.nom.length > 0 && props.email.length > 0 && props.phone.length > 0) && <div className='btnNext' onClick={props.diffComponent}>Next Step</div>}
             </div>
         </div>
     )

@@ -1,0 +1,29 @@
+[
+    {
+        "img": "./src/assets/img/icon-arcade.svg",
+        "nom": "Arcade",
+        "prix": {
+            "mois": 9,
+            "year": 90
+        },
+        "période": ["mo", "yr"]
+    },
+    {
+        "img": "./src/assets/img/icon-advanced.svg",
+        "nom": "Advanced",
+        "prix": {
+            "mois": 12,
+            "year": 120
+        },
+        "période": ["mo", "yr"]
+    },
+    {
+        "img": "./src/assets/img/icon-pro.svg",
+        "nom": "Pro",
+        "prix": {
+            "mois": 15,
+            "year": 150
+        },
+        "période": ["mo", "yr"]
+    }
+]
