@@ -1,0 +1,29 @@
+[
+    {
+        "service": "Online Service",
+        "description": "Acess to multiplayer games",
+        "prix": {
+            "prixM": 1,
+            "prixY": 10
+        },
+        "periode": ["mo", "yr"]
+    },
+    {
+        "service": "Larger Storage",
+        "description": "Extra 1TB of cloud storage",
+        "prix": {
+            "prixM": 2,
+            "prixY": 20
+        },
+        "periode": ["mo", "yr"]
+    },
+    {
+        "service": "Customizable Profile",
+        "description": "Custom theme on your profile",
+        "prix": {
+            "prixM": 2,
+            "prixY": 20
+        },
+        "periode": ["mo", "yr"]
+    }
+]

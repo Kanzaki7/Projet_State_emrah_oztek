@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import './App.css'
 import plans from './assets/json/plans.json'
+import addons from './assets/json/addons.json'
 import Personal from './components/Personal/Personal'
 import Plan from './components/Plan/Plan'
+import Add from './components/Add/Add'
 
 
 
@@ -109,9 +111,10 @@ function App() {
           </div>
         </div>
         <div className='secondeDiv'>
-        {component === "personal" ?
-        <Personal nom={nom} email={email} phone={phone} changeNom={captureNom} changeEmail={captureEmail} changePhone={capturePhone} diffComponent={changeComponent}/>
-        :  <div className='divPlan'>
+        {component === "personal" &&
+        <Personal nom={nom} email={email} phone={phone} changeNom={captureNom} changeEmail={captureEmail} changePhone={capturePhone} diffComponent={changeComponent}/>}
+        {component === "plan" &&
+        <div className='divPlan'>
             <div className='personalTitre'>
                 <p className='titreInfo'>Select your plan</p>
                 <p className='paraTitre'>You have the option of monthly or yearly billing</p>
@@ -143,7 +146,9 @@ function App() {
               <div className='btnBack' onClick={changeComponentBis}>Go Back</div>
               {(state >= 0 && state <= 2) && <div className='btnNext' onClick={changeComponent}>Next Step</div>}
             </div>
-        </div>
+        </div>}
+        {component === "add" &&
+        <Add diffComponent={changeComponent} diffComponentBis={changeComponentBis}/>
         }  
         </div>
       </div>
