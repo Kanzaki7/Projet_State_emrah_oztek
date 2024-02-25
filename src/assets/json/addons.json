@@ -6,7 +6,8 @@
             "prixM": 1,
             "prixY": 10
         },
-        "periode": ["mo", "yr"]
+        "periode": ["mo", "yr"],
+        "check": "unchecked"
     },
     {
         "service": "Larger Storage",
@@ -15,7 +16,8 @@
             "prixM": 2,
             "prixY": 20
         },
-        "periode": ["mo", "yr"]
+        "periode": ["mo", "yr"],
+        "check": "unchecked"
     },
     {
         "service": "Customizable Profile",
@@ -24,6 +26,7 @@
             "prixM": 2,
             "prixY": 20
         },
-        "periode": ["mo", "yr"]
+        "periode": ["mo", "yr"],
+        "check": "unchecked"
     }
 ]

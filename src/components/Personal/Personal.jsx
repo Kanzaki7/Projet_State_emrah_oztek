@@ -10,15 +10,15 @@ export default function Personal(props) {
             <div className='personalForm'>
                 <div className='divInput'>
                     <label htmlFor="">Your name is : {props.nom}</label>
-                    <input type="text" placeholder='Name' className='inputMain' onChange={props.changeNom} value={props.nom}/>
+                    <input type="text" placeholder='Name' required className='inputMain' onChange={props.changeNom} value={props.nom}/>
                 </div>
                 <div className='divInput'>
                     <label htmlFor="">Your email is : {props.email}</label>
-                    <input type="email" placeholder='@email.com' className='inputMain' onChange={props.changeEmail} value={props.email}/>
+                    <input type="email" placeholder='@email.com' required className='inputMain' onChange={props.changeEmail} value={props.email}/>
                 </div>
                 <div className='divInput'>
                     <label htmlFor="">Your phone number is : {props.phone}</label>
-                    <input type="text" placeholder='+32' className='inputMain' onChange={props.changePhone} value={props.phone}/>
+                    <input type="text" placeholder='+32' required className='inputMain' onChange={props.changePhone} value={props.phone}/>
                 </div>
             </div>
             <div className='personalBtn'>

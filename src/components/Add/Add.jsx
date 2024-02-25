@@ -2,32 +2,18 @@ import './Add.css'
 
 export default function Add(props) {
     return(
-        <div className='divAdd'>
-            <div className='personalTitre'>
-                <p className='titreInfo'>Pick add-ons</p>
-                <p className='paraTitre'>Add-ons help enhance your gaming experience.</p>
-            </div>
-            <div className='addons'>
-                <div className='addon'>
-                    <div className='addonDiv1'>
-                        <div>
-                            <input type="checkbox" name="" id="" />
-                        </div>
-                        <div>
-                            <p className='service'>Online service</p>
-                            <p className='description'>Acess to multiplayer games</p>
-                        </div>
-                    </div>
-                    <div className='addonDiv2'>
-                        <p className='priceAddon'>+$10/yr</p>
-                    </div>
+        <div className={props.check} >
+            <div className='addonDiv1'>
+                <div>
+                    <input type="checkbox" className='ui-checkbox' name="" onClick={() => props.changeOption(props.id)}/>
                 </div>
-                <div className='addon'></div>
-                <div className='addon'></div>
+                <div>
+                    <p className='service'>{props.service}</p>
+                    <p className='description'>{props.description}</p>
+                </div>
             </div>
-            <div className='addBtn'>
-                <div className='btnBack' onClick={props.diffComponentBis}>Go Back</div>
-                <div className='btnNext' onClick={props.diffComponent}>Next Step</div>
+            <div className='addonDiv2'>
+                <p className='priceAddon'>+${props.time === "rondToggle" ? props.prixM : props.prixY}/{props.time === "rondToggle" ? props.mois : props.year}</p>
             </div>
         </div>
     )

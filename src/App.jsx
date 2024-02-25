@@ -18,6 +18,8 @@ function App() {
   const [classToggle, setClassToggle] = useState("rondToggle")
 
   const [state, setState] = useState(-1)
+  const [addonsList, setAddonsList] = useState(addons)
+
 
   let changeClassOption = (event) => {
     if (event.target.id === "0") {
@@ -30,6 +32,15 @@ function App() {
       console.log(event.target);
       setState(2)
     }
+  }
+  let changeClassOption2 = (index) => {
+    let copieAddons = [...addonsList]
+    if (copieAddons[index].check === "unchecked") {
+      copieAddons[index].check = "checked"
+    } else if (copieAddons[index].check === "checked") {
+      copieAddons[index].check = "unchecked"
+    }
+    setAddonsList(copieAddons)
   }
 
   let changeToggle = () => {
@@ -148,7 +159,23 @@ function App() {
             </div>
         </div>}
         {component === "add" &&
-        <Add diffComponent={changeComponent} diffComponentBis={changeComponentBis}/>
+        <div className='divAdd'>
+        <div className='personalTitre'>
+          <p className='titreInfo'>Pick add-ons</p>
+          <p className='paraTitre'>Add-ons help enhance your gaming experience.</p>
+        </div>
+        <div className='addons'>
+          {
+            addonsList.map((add, index) =>(
+              <Add key={index} id={index} changeOption={changeClassOption2} check={add.check} time={classToggle} service={add.service} description={add.description} prixM={add.prix.prixM} prixY={add.prix.prixY} mois={add.periode[0]} year={add.periode[1]}/>
+            ))
+          }
+        </div>
+        <div className='addBtn'>
+          <div className='btnBack' onClick={changeComponentBis}>Go Back</div>
+          <div className='btnNext' onClick={changeComponent}>Next Step</div>
+        </div>
+      </div>
         }  
         </div>
       </div>
