@@ -5,6 +5,7 @@ import addons from './assets/json/addons.json'
 import Personal from './components/Personal/Personal'
 import Plan from './components/Plan/Plan'
 import Add from './components/Add/Add'
+import Summary from './components/Summary/Summary'
 
 
 
@@ -37,11 +38,23 @@ function App() {
     let copieAddons = [...addonsList]
     if (copieAddons[index].check === "unchecked") {
       copieAddons[index].check = "checked"
+      copieAddons[index].state = true
     } else if (copieAddons[index].check === "checked") {
       copieAddons[index].check = "unchecked"
+      copieAddons[index].state = false
     }
     setAddonsList(copieAddons)
   }
+
+  // let changeCheck = (event) =>{
+  //   if (event.target.id === "0") {
+  //     setChecked(true)
+  //   } else if (event.target.id === "1") {
+  //     setChecked(true)
+  //   } else if (event.target.id === "2") {
+  //     setChecked(true)
+  //   }
+  // }
 
   let changeToggle = () => {
     if (classToggle === "rondToggle") {
@@ -66,6 +79,8 @@ function App() {
       setComponent("plan")
     } else if (component === "plan") {
       setComponent("add")
+    } else if (component === "add") {
+      setComponent("summary")
     }
   }
   let changeComponentBis = () => {
@@ -73,7 +88,13 @@ function App() {
       setComponent("personal")
     } else if (component === "add") {
       setComponent("plan")
+    } else if (component === "summary") {
+      setComponent("add")
     }
+  }
+
+  let changeOption = () => {
+    setComponent("plan")
   }
 
   return (
@@ -110,7 +131,7 @@ function App() {
                 </div>
               </div>
               <div className='step'>
-                <div className='divStepNumber'>
+                <div className={component === "summary" ? 'divStepNumberActive' : "divStepNumber"}>
                   <p className='number'>4</p>
                 </div>
                 <div className='paraStep'>
@@ -160,22 +181,64 @@ function App() {
         </div>}
         {component === "add" &&
         <div className='divAdd'>
-        <div className='personalTitre'>
-          <p className='titreInfo'>Pick add-ons</p>
-          <p className='paraTitre'>Add-ons help enhance your gaming experience.</p>
+          <div className='personalTitre'>
+            <p className='titreInfo'>Pick add-ons</p>
+            <p className='paraTitre'>Add-ons help enhance your gaming experience.</p>
         </div>
         <div className='addons'>
           {
             addonsList.map((add, index) =>(
-              <Add key={index} id={index} changeOption={changeClassOption2} check={add.check} time={classToggle} service={add.service} description={add.description} prixM={add.prix.prixM} prixY={add.prix.prixY} mois={add.periode[0]} year={add.periode[1]}/>
+              <Add key={index} id={index} changeOption={changeClassOption2} check={add.check} state={add.state} time={classToggle} service={add.service} description={add.description} prixM={add.prix.prixM} prixY={add.prix.prixY} mois={add.periode[0]} year={add.periode[1]}/>
             ))
           }
+          </div>
+          <div className='addBtn'>
+            <div className='btnBack' onClick={changeComponentBis}>Go Back</div>
+            <div className='btnNext' onClick={changeComponent}>Next Step</div>
+          </div>
         </div>
-        <div className='addBtn'>
-          <div className='btnBack' onClick={changeComponentBis}>Go Back</div>
-          <div className='btnNext' onClick={changeComponent}>Next Step</div>
-        </div>
-      </div>
+        }
+        {component === "summary" &&
+          <div className='divSummary'>
+            <div className='personalTitre'>
+              <p className='titreInfo'>Finishing up</p>
+              <p className='paraTitre'>Double-check everything looks OK before confirming.</p>
+            </div>
+            <div className='total'>
+              <div className='totalDiv1'>
+                <div className='totalDiv1Bis'>
+                  <div className='optionSummary'>
+                    <div className='optionInfo'>
+                      <p className='optionNom'>Arcade(Yearly)</p>
+                      <div className='optionChange' onClick={changeOption}>
+                        <p>Change</p>
+                      </div>
+                    </div>
+                    <div className='optionPrice'>
+                      <p>$90/yr</p>
+                    </div>
+                  </div>
+                  <div className='addonsSummary'>
+
+                  </div>
+                </div>
+              </div>
+              <div className='totalDiv2'>
+                <div className='totalDiv2Bis'>
+                  <div className='perTotal'>
+                    <p>Total (per month)</p>
+                  </div>
+                  <div className='priceTotal'>
+                    <p>$16/mo</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='summaryBtn'>
+              <div className='btnBack' onClick={changeComponentBis}>Go Back</div>
+              <div className='btnNext' onClick={changeComponent}>Confirm</div>
+            </div>
+          </div> 
         }  
         </div>
       </div>

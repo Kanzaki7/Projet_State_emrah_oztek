@@ -7,7 +7,8 @@
             "prixY": 10
         },
         "periode": ["mo", "yr"],
-        "check": "unchecked"
+        "check": "unchecked",
+        "state":false
     },
     {
         "service": "Larger Storage",
@@ -17,7 +18,8 @@
             "prixY": 20
         },
         "periode": ["mo", "yr"],
-        "check": "unchecked"
+        "check": "unchecked",
+        "state":false
     },
     {
         "service": "Customizable Profile",
@@ -27,6 +29,7 @@
             "prixY": 20
         },
         "periode": ["mo", "yr"],
-        "check": "unchecked"
+        "check": "unchecked",
+        "state":false
     }
 ]

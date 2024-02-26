@@ -1,0 +1,266 @@
+@font-face {
+    font-family: UbuntuBold;
+    src: url('../src/assets/fonts/Ubuntu/Ubuntu-Bold.ttf');
+}
+@font-face {
+    font-family: UbuntuLight;
+    src: url('../src/assets/fonts/Ubuntu/Ubuntu-Light.ttf');
+}
+@font-face {
+    font-family: UbuntuMedium;
+    src: url('../src/assets/fonts/Ubuntu/Ubuntu-Medium.ttf');
+}
+@font-face {
+    font-family: UbuntuRegular;
+    src: url('../src/assets/fonts/Ubuntu/Ubuntu-Regular.ttf');
+}
+
+p {
+    margin: 0;
+}
+
+.divSummary {
+    color: black;
+    width: 75%;
+    height: 100%;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.personalTitre {
+    width: 100%;
+    height: 17%;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.titreInfo {
+    font-size: 35px;
+    font-family: UbuntuBold;
+    color: hsl(213, 96%, 18%);
+}
+
+.paraTitre {
+    color: hsl(231, 11%, 63%);
+    font-family: UbuntuRegular;
+}
+
+.total {
+    width: 100%;
+    height: 60%;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.totalDiv1 {
+    width: 100%;
+    height: 75%;
+    background-color: hsl(217, 100%, 97%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.totalDiv1Bis {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.optionSummary {
+    width: 100%;
+    height: 40%;
+    border-bottom: 1px solid hsl(231, 11%, 63%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.optionInfo {
+    width: 40%;
+    height: 50%;
+    /* border: 2px solid black; */
+}
+
+.optionNom {
+    font-family: UbuntuBold;
+    color: hsl(213, 96%, 18%);
+    font-size: 18px; 
+}
+
+.optionChange {
+    width: 30%;
+    border-bottom: 2px solid hsl(231, 11%, 63%);
+    cursor: pointer;
+}
+
+.optionChange p {
+    font-family: UbuntuMedium;
+    font-size: 14px;
+    color: hsl(231, 11%, 63%);
+    margin: 0;
+}
+
+.optionChange:hover {
+    border-bottom: 2px solid hsl(229, 24%, 87%);
+}
+.optionChange p:hover {
+    color: hsl(229, 24%, 87%);
+}
+
+.optionPrice {
+    width: 25%;
+    height: 50%;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+}
+
+.optionPrice p {
+    font-family: UbuntuBold;
+    color: hsl(213, 96%, 18%);
+    font-size: 18px;
+}
+
+.addonsSummary {
+    width: 100%;
+    height: 60%;
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.addonsSummaryBis {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addonNom {
+    width: 30%;
+    height: 30%;
+    /* border: 2px solid red; */
+}
+
+.addonNom p {
+    font-family: UbuntuMedium;
+    font-size: 14px;
+    color: hsl(231, 11%, 63%);
+    margin: 0;
+}
+
+.addonPrice p {
+    font-family: UbuntuBold;
+    color: hsl(213, 96%, 18%);
+    font-size: 16px;
+}
+
+.addonPrice {
+    width: 25%;
+    height: 30%;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+}
+
+.totalDiv2 {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+.totalDiv2Bis {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+
+.perTotal {
+    width: 40%;
+    height: 100%;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.perTotal p {
+    font-family: UbuntuMedium;
+    font-size: 15px;
+    color: hsl(231, 11%, 63%);
+}
+
+.priceTotal {
+    width: 25%;
+    height: 100%;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.priceTotal p {
+    font-family: UbuntuBold;
+    color: hsl(243, 100%, 62%);
+    font-size: 24px;
+}
+
+.summaryBtn {
+    width: 98%;
+    height: 18%;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.btnNext {
+    width: 130px;
+    height: 55px;
+    color: white;
+    font-family: UbuntuBold;
+    background-color: hsl(243, 100%, 62%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+  
+  
+.btnBack {
+    width: 130px;
+    height: 55px;
+    color: hsl(213, 96%, 18%);
+    font-family: UbuntuBold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+  
+.btnBack:hover {
+    color: hsl(243, 100%, 62%);
+}

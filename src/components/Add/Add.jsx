@@ -5,7 +5,7 @@ export default function Add(props) {
         <div className={props.check} >
             <div className='addonDiv1'>
                 <div>
-                    <input type="checkbox" className='ui-checkbox' name="" onClick={() => props.changeOption(props.id)}/>
+                    <input id={props.id} type="checkbox" className='ui-checkbox' name="" onClick={() => props.changeOption(props.id)} checked={props.state} />
                 </div>
                 <div>
                     <p className='service'>{props.service}</p>

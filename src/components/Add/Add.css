@@ -82,7 +82,7 @@ p {
     justify-content: space-around;
     gap: 90px;
 }
-.addon:hover {
+.unchecked:hover {
     width: 100%;
     height: 30%;
     border: 2px solid hsl(213, 96%, 18%);
