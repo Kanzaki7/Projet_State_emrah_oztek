@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import plans from './assets/json/plans.json'
 import addons from './assets/json/addons.json'
@@ -10,7 +10,6 @@ import Summary from './components/Summary/Summary'
 
 
 function App() {
-  // const [count, setCount] = useState(0)
   const [nom, setNom] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
@@ -19,42 +18,95 @@ function App() {
   const [classToggle, setClassToggle] = useState("rondToggle")
 
   const [state, setState] = useState(-1)
+
   const [addonsList, setAddonsList] = useState(addons)
+  const [addonsSummary, setAddonsSummary] = useState([])
 
 
-  let changeClassOption = (event) => {
-    if (event.target.id === "0") {
-      console.log(event.target);
-      setState(0)
-    } else if (event.target.id === "1") {
-      console.log(event.target);
-      setState(1)
-    } else if (event.target.id === "2") {
-      console.log(event.target);
-      setState(2)
-    }
+  const [optionNom, setOptionNom] = useState("")
+  const [optionPrixM, setOptionPrixM] = useState(0)
+  const [optionPrixY, setOptionPrixY] = useState(0)
+  const [optionTotalM, setOptionTotalM] = useState(0)
+  const [optionTotalY, setOptionTotalY] = useState(0)
+
+
+
+  let changeClassOption = (index) => {
+      setState(index)
+      console.log(state);
   }
+
+  useEffect(() => {
+    if (state === 0) {
+      setOptionNom(plans[0].nom)
+      console.log(optionNom);
+      setOptionPrixM(plans[0].prix.mois)
+      setOptionPrixY(plans[0].prix.year)
+      console.log(optionPrixM);
+      console.log(optionPrixY);
+    } else if (state === 1) {
+      setOptionNom(plans[1].nom)
+      console.log(optionNom);
+      setOptionPrixM(plans[1].prix.mois)
+      setOptionPrixY(plans[1].prix.year)
+      console.log(optionPrixM);
+      console.log(optionPrixY);
+    } else if (state === 2) {
+      setOptionNom(plans[2].nom)
+      console.log(optionNom);
+      setOptionPrixM(plans[2].prix.mois)
+      setOptionPrixY(plans[2].prix.year)
+      console.log(optionPrixM);
+      console.log(optionPrixY);
+    }
+  }, [state])
+  
+
+  useEffect(() => {
+    if (component === 'add') {
+      setOptionTotalM(optionTotalM+optionPrixM)
+      console.log(optionTotalM);
+      setOptionTotalY(optionTotalY+optionPrixY)
+      console.log(optionTotalY);
+    } else if (component === "plan") {
+      setOptionTotalM(optionTotalM-optionPrixM)
+      console.log(optionTotalM);
+      setOptionTotalY(optionTotalY-optionPrixY)
+      console.log(optionTotalY);
+    }
+  }, [component])
+  
+  
+  
+
   let changeClassOption2 = (index) => {
     let copieAddons = [...addonsList]
+    // let addonsBis = []
     if (copieAddons[index].check === "unchecked") {
       copieAddons[index].check = "checked"
       copieAddons[index].state = true
+      // console.log(copieAddons[index].prix.mois);
+      setOptionTotalM(optionTotalM+copieAddons[index].prix.prixM)
+      setOptionTotalY(optionTotalY+copieAddons[index].prix.prixY)
+      console.log(optionTotalM);
+      console.log(optionTotalY);
+      setAddonsList(copieAddons)
+      let addonsBis = [...copieAddons]
+      let addFilter = addonsBis.filter((add) => add.check === "checked")
+      setAddonsSummary(addFilter)
     } else if (copieAddons[index].check === "checked") {
       copieAddons[index].check = "unchecked"
       copieAddons[index].state = false
+      setOptionTotalM(optionTotalM-copieAddons[index].prix.prixM)
+      setOptionTotalY(optionTotalY-copieAddons[index].prix.prixY)
+      setAddonsList(copieAddons)
+      let addonsBis = [...copieAddons]
+      let addFilter = addonsBis.filter((add) => add.check === "checked")
+      setAddonsSummary(addFilter)
     }
-    setAddonsList(copieAddons)
+    // setAddonsList(copieAddons)
   }
 
-  // let changeCheck = (event) =>{
-  //   if (event.target.id === "0") {
-  //     setChecked(true)
-  //   } else if (event.target.id === "1") {
-  //     setChecked(true)
-  //   } else if (event.target.id === "2") {
-  //     setChecked(true)
-  //   }
-  // }
 
   let changeToggle = () => {
     if (classToggle === "rondToggle") {
@@ -209,27 +261,31 @@ function App() {
                 <div className='totalDiv1Bis'>
                   <div className='optionSummary'>
                     <div className='optionInfo'>
-                      <p className='optionNom'>Arcade(Yearly)</p>
+                      <p className='optionNom'>{optionNom}({classToggle === "rondToggle" ? "Month" : "Year"})</p>
                       <div className='optionChange' onClick={changeOption}>
                         <p>Change</p>
                       </div>
                     </div>
                     <div className='optionPrice'>
-                      <p>$90/yr</p>
+                      <p>${classToggle === "rondToggle" ? optionPrixM : optionPrixY}/{classToggle === "rondToggle" ? "mo" : "yr"}</p>
                     </div>
                   </div>
                   <div className='addonsSummary'>
-
+                  {
+                    addonsSummary.map((addons, index) => (
+                      <Summary key={index} id={index} time={classToggle} service={addons.service} prixM={addons.prix.prixM} prixY={addons.prix.prixY} mois={addons.periode[0]} year={addons.periode[1]}/>
+                    ))
+                  }
                   </div>
                 </div>
               </div>
               <div className='totalDiv2'>
                 <div className='totalDiv2Bis'>
                   <div className='perTotal'>
-                    <p>Total (per month)</p>
+                    <p>Total (per {classToggle === "rondToggle" ? "month" : "year"})</p>
                   </div>
                   <div className='priceTotal'>
-                    <p>$16/mo</p>
+                    <p>${classToggle === "rondToggle" ? optionTotalM : optionTotalY}/{classToggle === "rondToggle" ? "mo" : "yr"}</p>
                   </div>
                 </div>
               </div>

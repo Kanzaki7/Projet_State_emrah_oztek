@@ -4,10 +4,10 @@ export default function Summary(props) {
     return(
         <div className='addonsSummaryBis'>
             <div className='addonNom'>
-                <p>Online service</p>
+                <p>{props.service}</p>
             </div>
             <div className='addonPrice'>
-                <p>+$10/yr</p>
+                <p>+${props.time === 'rondToggle' ? props.prixM : props.prixY}/{props.time === 'rondToggle' ? props.mois : props.year}</p>
             </div>
         </div>
     )
