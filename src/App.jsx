@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import plans from './assets/json/plans.json'
 import addons from './assets/json/addons.json'
+import thankIcon from './assets/img/icon-thank-you.svg'
 import Personal from './components/Personal/Personal'
 import Plan from './components/Plan/Plan'
 import Add from './components/Add/Add'
 import Summary from './components/Summary/Summary'
+import Thank from './components/Thank/Thank'
 
 
 
@@ -134,6 +136,8 @@ function App() {
       setComponent("add")
     } else if (component === "add") {
       setComponent("summary")
+    } else if (component === "summary") {
+      setComponent("thank")
     }
   }
   let changeComponentBis = () => {
@@ -298,7 +302,10 @@ function App() {
               <div className='btnNext' onClick={changeComponent}>Confirm</div>
             </div>
           </div> 
-        }  
+        }
+        {component === "thank" &&
+          <Thank thankIcon={thankIcon}/>
+        } 
         </div>
       </div>
     </>
