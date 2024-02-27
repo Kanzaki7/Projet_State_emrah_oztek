@@ -12,20 +12,39 @@ import Thank from './components/Thank/Thank'
 
 
 function App() {
+  // useStates pour les inputs du premier component sur les infos personnels
   const [nom, setNom] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
 
+  // useState pour le passage d'un component à un autre lors du click sur le bouton 
+  // Next Step
   const [component, setComponent] = useState("personal")
+
+  // useState pour le changement de la classe lors du click sur le toggle du component 
+  // sur les différents tarifs, en fonction de cette classe ce sera soit le prix par
+  // mois, soit le prix par année qui sera affiché
   const [classToggle, setClassToggle] = useState("rondToggle")
 
+
+// useState pour le changement de classe lors du click sur la div qui contient un tarif
+// si state = l'index de la div, la classe "active" est appliquée sur cette div, et non
+// sur les autres
   const [state, setState] = useState(-1)
+
+  // useState qui va etre utilisé dans une condition pour déterminer si lors du repassage
+  // par le component des add-ons, le tarif précédemment séléctionné doit etre
+  // soustrait ou pas 
   const [goback, setGoback] = useState(false)
 
+
+  // ces useStates sont utilisés pour changer les valeurs de deux propriétées
+  // en fonction de la valeur de ces propriétées, le checkmark contenu dans la div restera coché
+  // si il est coché, on lui donne une classe différente
   const [addonsList, setAddonsList] = useState(addons)
   const [addonsSummary, setAddonsSummary] = useState([])
 
-
+// ces useStates sont utilisés pour le calcul total
   const [optionNom, setOptionNom] = useState("")
   const [optionPrixM, setOptionPrixM] = useState(0)
   const [optionPrixY, setOptionPrixY] = useState(0)
@@ -33,12 +52,8 @@ function App() {
   const [optionTotalY, setOptionTotalY] = useState(0)
 
 
-
-  let changeClassOption = (index) => {
-      setState(index)
-      console.log(state);
-  }
-
+  // lors du changement de la valeur du state donc lors du click sur une autre div des tarifs
+  // la valeur du tarif sera attribué au useState correspondant
   useEffect(() => {
     if (state === 0) {
       setOptionNom(plans[0].nom)
@@ -65,6 +80,8 @@ function App() {
   }, [state])
   
 
+  // quand on arrive au component des add-ons, donc après etre passé par le component des
+  // tarifs, le useState auquel on a attribué le tarif sélectionné sera additionné à la somme totale
   useEffect(() => {
     if (component === 'add' && goback === false) {
       setOptionTotalM(optionTotalM+optionPrixM)
@@ -78,17 +95,25 @@ function App() {
       console.log(optionTotalY);
     }
   }, [component, goback])
-  
-  
+
+
+  // fonction qui va attribuer à la div clické donc celle qui contient l'index en paramètre
+  // une classe active 
+  let changeClassOption = (index) => {
+      setState(index)
+      console.log(state);
+  }
   
 
+  // fonction qui va attribué une classe à la div si le checkmark est coché
+  // si le checkmark est coché, la valeur de l'add-on correspondant est additionnée au total
+  // un filter sera fait sur les objets qui ont été checkés
+  // c'est sur le nouveau tableau filtré que le map sera effectué, pour afficher les options dans le component du résumé 
   let changeClassOption2 = (index) => {
     let copieAddons = [...addonsList]
-    // let addonsBis = []
     if (copieAddons[index].check === "unchecked") {
       copieAddons[index].check = "checked"
       copieAddons[index].state = true
-      // console.log(copieAddons[index].prix.mois);
       setOptionTotalM(optionTotalM+copieAddons[index].prix.prixM)
       setOptionTotalY(optionTotalY+copieAddons[index].prix.prixY)
       console.log(optionTotalM);
@@ -107,10 +132,9 @@ function App() {
       let addFilter = addonsBis.filter((add) => add.check === "checked")
       setAddonsSummary(addFilter)
     }
-    // setAddonsList(copieAddons)
   }
 
-
+// fonction pour passer d'une classe à une autre lors du click sur le toggle
   let changeToggle = () => {
     if (classToggle === "rondToggle") {
       setClassToggle("rondToggleActive")
@@ -119,6 +143,7 @@ function App() {
     }
   }
 
+  // les fonctions utilisées pour capturer la valeur des inputs dans le 1er component
   let captureNom = (event) => {
     setNom(event.target.value);
   }
@@ -129,6 +154,7 @@ function App() {
     setPhone(event.target.value);
   }
 
+  // fonction pour passer au component suivant en cliquant sur le btn Next Step
   let changeComponent = () => {
     if (component === "personal") {
       setComponent("plan")
@@ -140,6 +166,8 @@ function App() {
       setComponent("thank")
     }
   }
+
+  // fonction pour passer au component précédent en cliquant sur le btn Go Back 
   let changeComponentBis = () => {
     if (component === "plan") {
       setComponent("personal")
@@ -151,6 +179,7 @@ function App() {
     }
   }
 
+  // fonction pour revenir au component des tarifs quand on clique sur la div Change
   let changeOption = () => {
     setComponent("plan")
     setGoback(false)
