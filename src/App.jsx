@@ -18,6 +18,7 @@ function App() {
   const [classToggle, setClassToggle] = useState("rondToggle")
 
   const [state, setState] = useState(-1)
+  const [goback, setGoback] = useState(false)
 
   const [addonsList, setAddonsList] = useState(addons)
   const [addonsSummary, setAddonsSummary] = useState([])
@@ -63,7 +64,7 @@ function App() {
   
 
   useEffect(() => {
-    if (component === 'add') {
+    if (component === 'add' && goback === false) {
       setOptionTotalM(optionTotalM+optionPrixM)
       console.log(optionTotalM);
       setOptionTotalY(optionTotalY+optionPrixY)
@@ -74,7 +75,7 @@ function App() {
       setOptionTotalY(optionTotalY-optionPrixY)
       console.log(optionTotalY);
     }
-  }, [component])
+  }, [component, goback])
   
   
   
@@ -142,11 +143,13 @@ function App() {
       setComponent("plan")
     } else if (component === "summary") {
       setComponent("add")
+      setGoback(true)
     }
   }
 
   let changeOption = () => {
     setComponent("plan")
+    setGoback(false)
   }
 
   return (
