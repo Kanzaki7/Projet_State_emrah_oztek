@@ -8,9 +8,9 @@ export default function Thank(props) {
                     <img src={props.thankIcon} alt="" />
                 </div>
             </div>
-            <div className='personalTitre'>
-                <p className='titreInfo'>Thank you!</p>
-                <p className='paraTitre'>
+            <div className='thankTitre'>
+                <p className='thankInfo'>Thank you!</p>
+                <p className='paraThank'>
                     Thanks fot confirming your subscription! We hope you have fun using
                     out platform. If you ever need support, please feel free to email us at 
                     support@loregaming.com.

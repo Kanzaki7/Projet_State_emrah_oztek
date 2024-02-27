@@ -158,3 +158,271 @@ p {
 .btnBack:hover {
   color: hsl(243, 100%, 62%);
 }
+
+
+
+/* media queries */
+
+@media screen and (min-width: 320px) and (max-width: 375px) {
+  .divPrincipale {
+    width: 95%;
+    height: 95%;
+    flex-direction: column;
+  }
+
+  .divStep {
+    height: 30%;
+    width: 95%;
+    /* border: 2px solid red; */
+  }
+  
+  .sideBar {
+    background-position: 0% 90%;
+  }
+  
+  .divStepPrincipale {
+      margin-top: 20px;
+      gap: 5px;
+    }
+    
+    p {
+      margin: 0;
+    }
+    
+    .step {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .divStepNumber {
+      width: 20px;
+      height: 20px;
+    }
+    .divStepNumberActive {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .number {
+      font-size: 13x;
+    }
+    
+    .paraNumberStep {
+      font-size: 9px;
+    }
+    
+    .paraTextStep {
+      font-size: 13px;
+    }
+
+    .secondeDiv {
+      width: 95%;
+      height: 65%;
+      /* border: 2px solid black; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+@media screen and (min-width: 375px) and (max-width: 425px) {
+  .divPrincipale {
+    width: 95%;
+    height: 95%;
+    flex-direction: column;
+  }
+
+  .divStep {
+    height: 30%;
+    width: 95%;
+    /* border: 2px solid red; */
+  }
+  
+  .sideBar {
+    background-position: 0% 90%;
+  }
+  
+  .divStepPrincipale {
+      margin-top: 20px;
+      gap: 5px;
+    }
+    
+    p {
+      margin: 0;
+    }
+    
+    .step {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .divStepNumber {
+      width: 20px;
+      height: 20px;
+    }
+    .divStepNumberActive {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .number {
+      font-size: 13x;
+    }
+    
+    .paraNumberStep {
+      font-size: 9px;
+    }
+    
+    .paraTextStep {
+      font-size: 13px;
+    }
+
+    .secondeDiv {
+      width: 95%;
+      height: 65%;
+      /* border: 2px solid black; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .divPrincipale {
+    width: 95%;
+    height: 95%;
+    flex-direction: column;
+  }
+
+  .divStep {
+    height: 30%;
+    width: 95%;
+    /* border: 2px solid red; */
+  }
+  
+  .sideBar {
+    background-position: 0% 90%;
+  }
+  
+  .divStepPrincipale {
+      margin-top: 20px;
+      gap: 5px;
+    }
+    
+    p {
+      margin: 0;
+    }
+    
+    .step {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .divStepNumber {
+      width: 20px;
+      height: 20px;
+    }
+    .divStepNumberActive {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .number {
+      font-size: 13x;
+    }
+    
+    .paraNumberStep {
+      font-size: 9px;
+    }
+    
+    .paraTextStep {
+      font-size: 13px;
+    }
+
+    .secondeDiv {
+      width: 95%;
+      height: 65%;
+      /* border: 2px solid black; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .divPrincipale {
+    width: 95%;
+    height: 95%;
+    flex-direction: column;
+  }
+
+  .divStep {
+    height: 30%;
+    width: 95%;
+    /* border: 2px solid red; */
+  }
+  
+  .sideBar {
+    background-position: 0% 90%;
+  }
+  
+  .divStepPrincipale {
+      gap: 15px;
+    }
+    
+    p {
+      margin: 0;
+    }
+    
+    .step {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .divStepNumber {
+      width: 35px;
+      height: 35px;
+    }
+    .divStepNumberActive {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .number {
+      font-size: 16x;
+    }
+    
+    .paraNumberStep {
+      font-size: 12px;
+    }
+    
+    .paraTextStep {
+      font-size: 16px;
+    }
+
+    .secondeDiv {
+      width: 95%;
+      height: 65%;
+      /* border: 2px solid black; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .divPrincipale {
+    width: 90% !important;
+    height: 90% !important;
+  }
+
+  .divStep{
+    width: 35%;
+    /* border: 2px solid red; */
+  }
+
+  .sideBar {
+    background-position: 50% 0%;
+  }
+
+  .secondeDiv{
+    width: 60%;
+    /* border: 2px solid blue; */
+  }
+}

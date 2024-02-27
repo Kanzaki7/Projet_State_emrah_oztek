@@ -264,3 +264,206 @@ p {
 .btnBack:hover {
     color: hsl(243, 100%, 62%);
 }
+
+/* media queries */
+
+@media screen and (min-width: 320px) and (max-width: 375px) {
+    .divSummary {
+        width: 95%;
+        height: 100%;
+    }
+    
+    
+    .titreInfo {
+        font-size: 22px !important;
+    }
+    
+    .paraTitre {
+        font-size: 14px !important;
+    }
+    
+
+    
+    .optionSummary {
+        height: 50%;
+    }
+    
+    
+    .optionChange {
+        width: 50%;
+    }
+    
+    .optionChange p {
+        font-size: 13px;
+    }
+    
+    
+    .addonNom p {
+        font-size: 9px;
+    }
+    
+    .addonPrice p {
+        font-size: 11px;
+    }
+    
+    
+    
+    .perTotal p {
+        font-size: 13px;
+    }
+    
+    .priceTotal p {
+        font-size: 20px;
+    }
+}
+@media screen and (min-width: 375px) and (max-width: 425px) {
+    .divSummary {
+        width: 95%;
+        height: 100%;
+    }
+    
+    
+    .titreInfo {
+        font-size: 22px !important;
+    }
+    
+    .paraTitre {
+        font-size: 14px !important;
+    }
+    
+
+    
+    .optionSummary {
+        height: 50%;
+    }
+    
+    
+    .optionChange {
+        width: 50%;
+    }
+    
+    .optionChange p {
+        font-size: 13px;
+    }
+    
+    
+    .addonNom p {
+        font-size: 9px;
+    }
+    
+    .addonPrice p {
+        font-size: 13px;
+    }
+    
+    .perTotal p {
+        font-size: 13px;
+    }
+    
+    .priceTotal p {
+        font-size: 20px;
+    }
+    
+}
+@media screen and (min-width: 425px) and (max-width: 768px) {
+    .divSummary {
+        width: 95%;
+        height: 100%;
+    }
+    
+    
+    .titreInfo {
+        font-size: 22px !important;
+    }
+    
+    .paraTitre {
+        font-size: 14px !important;
+    }
+    
+
+    
+    .optionSummary {
+        height: 50%;
+    }
+    
+    
+    .optionChange {
+        width: 50%;
+    }
+    
+    .optionChange p {
+        font-size: 13px;
+    }
+    
+    
+    .addonNom p {
+        font-size: 9px;
+    }
+    
+    .addonPrice p {
+        font-size: 11px;
+    }
+    
+    
+    
+    .perTotal p {
+        font-size: 13px;
+    }
+    
+    .priceTotal p {
+        font-size: 20px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .divSummary {
+        width: 95%;
+        height: 100%;
+    }
+    
+    
+    .titreInfo {
+        font-size: 30px !important;
+    }
+    
+    .paraTitre {
+        font-size: 18px !important;
+    }
+    
+
+    
+    .optionSummary {
+        height: 50%;
+    }
+    
+    
+    .optionChange {
+        width: 50%;
+    }
+    
+    .optionChange p {
+        font-size: 13px;
+    }
+    
+    
+    .addonNom p {
+        font-size: 15px;
+    }
+    
+    .addonPrice p {
+        font-size: 19px;
+    }
+    
+    
+    
+    .perTotal p {
+        font-size: 20px;
+    }
+    
+    .priceTotal p {
+        font-size: 28px;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .divSummary{
+        width: 85% !important;
+    }   
+}
