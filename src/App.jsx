@@ -83,7 +83,7 @@ function App() {
   // quand on arrive au component des add-ons, donc après etre passé par le component des
   // tarifs, le useState auquel on a attribué le tarif sélectionné sera additionné à la somme totale
   useEffect(() => {
-    if (component === 'add' && goback === false) {
+    if (component === 'summary' && goback === false) {
       setOptionTotalM(optionTotalM+optionPrixM)
       console.log(optionTotalM);
       setOptionTotalY(optionTotalY+optionPrixY)
@@ -160,6 +160,7 @@ function App() {
       setComponent("plan")
     } else if (component === "plan") {
       setComponent("add")
+      setGoback(false)
     } else if (component === "add") {
       setComponent("summary")
     } else if (component === "summary") {
